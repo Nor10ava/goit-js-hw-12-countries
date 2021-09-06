@@ -1,5 +1,8 @@
-import { alert, defaultModules } from '../node_modules/@pnotify/core/dist/PNotify.js';
-// import debounce from 'lodash.debounce';
-alert({
-  text: 'Notice me, senpai!',
-});
+export default function fetchCountries(searchQuery) {
+  searchQuery.preventDefault();
+  const value = refs.input.value;
+  fetch(`https://restcountries.eu/rest/v2/name/${value}`)
+    .then(response => response.json())
+    .then(createGrid)
+    .catch(error => console.log(error));
+}

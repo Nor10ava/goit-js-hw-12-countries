@@ -6,7 +6,14 @@ const refs = {
   input: document.querySelector('#search'),
   container: document.querySelector('#container'),
 };
-
+export default function fetchCountries(searchQuery) {
+  searchQuery.preventDefault();
+  const value = refs.input.value;
+  fetch(`https://restcountries.eu/rest/v2/name/${value}`)
+    .then(response => response.json())
+    .then(createGrid)
+    .catch(error => console.log(error));
+}
 function createGrid(data) {
   if (data.length > 1 && data.length <= 10) {
     const list = data.map(item => `<li>${item.name}</li>`).join('');

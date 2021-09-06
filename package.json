@@ -1,9 +1,9 @@
 {
-  "name": "parcel-project-template",
+  "name": "goit-js-hw-12-countries",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://github.com/Nor10ava/goit-js-hw-12-countries.git",
+  "homepage": "https://Nor10ava.github.io/goit-js-hw-12-countries",
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-12-countries/"
